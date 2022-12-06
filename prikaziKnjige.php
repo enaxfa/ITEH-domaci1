@@ -97,7 +97,7 @@ if (isset($_POST['zanr'])) {
     $niz = [];
     $rez = $conn->query("select * from knjiga k join zanr z on k.Zanr=z.ZanrId");
     while ($red = $rez->fetch_assoc()) {
-      $Zanr = new Zanr($red['zanrId'], $red['nazivZanra']);
+      $Zanr = new Zanr($red['zanr'], $red['nazivZanra']);
       $knjiga = new Knjiga($red['IdKnjige'], $red['NazivKnjige'], $red['Autor'], $Zanr);
       array_push($niz, $knjiga);
     }
@@ -208,9 +208,9 @@ if (isset($_POST['zanr'])) {
         <div class="col-lg-4">
           <h4>Adresa</h4>
           <p>
-            Milana Rakica 77,<br />
-            0655417876, <br />
-            Beograd, Srbija.
+          Fakultet organizacionih nauka <br/>
+          Jove Ilica 154,<br />
+          Beograd, Srbija
           </p>
         </div>
 

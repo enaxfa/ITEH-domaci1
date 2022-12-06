@@ -119,6 +119,7 @@ include 'model/zanr.php';
                 <div class="col-lg-4">
                     <h4>Adresa</h4>
                     <p>
+                        Fakultet organizacionih nauka <br/>
                         Jove Ilica 154,<br />
                         Beograd, Srbija
                     </p>
