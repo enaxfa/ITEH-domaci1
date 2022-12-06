@@ -218,6 +218,13 @@ li {
     padding: 10px 5px;
 }
 
+.pretraga-zanra{
+    
+    margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
 .prijava-form {
     width: 100%;
     border: turquoise;

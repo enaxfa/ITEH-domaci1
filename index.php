@@ -104,44 +104,37 @@ include 'model/zanr.php';
 
     </div>
 
-    <div class="container pt">
-    <div id="searchDiv">
-            
-        <label for="pretraga">Pretraži knjige za odabrani žanr</label>
-        <select id="pretraga" onchange="pretraga()" class="form-control">
-        </select>
-        <div id="podaciPretraga"></div>
-    </div>
+     
 
     <div id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h4>Adresa</h4>
-                    <p>
-                        Fakultet organizacionih nauka <br/>
-                        Jove Ilica 154,<br />
-                        Beograd, Srbija
-                    </p>
-                </div>
-
-                <div class="col-lg-4">
-                    <h4>Društvene mreže</h4>
-                    <p>
-                        <a href="https://www.facebook.com/fon.bg.ac.rs">Facebook</a><br />
-                        <a href="https://twitter.com/fonbg">Twitter</a><br />
-                        <a href="http://plus.google.com/106390371419524147048/posts">Google+</a>
-                    </p>
-                </div>
-
-            </div>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h4>Adresa</h4>
+          <p>
+          Fakultet organizacionih nauka <br/>
+          Jove Ilica 154,<br />
+          Beograd, Srbija
+          </p>
         </div>
+
+        <div class="col-lg-4">
+          <h4>Društvene mreže</h4>
+          <p>
+            <a href="https://www.facebook.com/fon.bg.ac.rs">Facebook</a><br />
+            <a href="https://twitter.com/fonbg">Twitter</a><br />
+            <a href="http://plus.google.com/106390371419524147048/posts">Google+</a>
+          </p>
+        </div>
+
+      </div>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 
-</html>
+</html> 

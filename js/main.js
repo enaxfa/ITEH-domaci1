@@ -91,8 +91,6 @@ $('#btnIzmeni').submit(function () {
 
 //promena vrednosti cba
 $("#zanr").change(function(){
-
-  console.log("u fji changeeeeeeeeeeeeeeeeeee;");
   var idZanra =  $('#zanr').val();
   $('#idZanra').val(idZanra);
   
@@ -101,7 +99,6 @@ $("#zanr").change(function(){
 
 //Edit
 $('.btn-info').click(function () {
-  console.log("u oasdfosodfosadofo");
   const trenutni = $(this).attr('data-id2');
 
 

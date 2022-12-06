@@ -93,6 +93,19 @@ if (isset($_POST['zanr'])) {
         </div>
 
     </div>
+<div class = "pretraga-zanra">
+    <label for="pretraga">Pretraži knjige za odabrani žanr</label>
+        <select id="pretraga" onchange="pretraga()" class="form-control">
+        <?php
+            $rez = $conn->query("SELECT * from zanr");
+            while ($red = $rez->fetch_assoc()) {
+            ?>
+                <option value="<?php echo $red['ZanrId'] ?>"> <?php echo $red['nazivZanra'] ?></option>
+            <?php   }
+            ?>
+        </select>
+      </label>
+</div>
   <div class="container pt">
     <?php
     $niz = [];
@@ -136,8 +149,6 @@ if (isset($_POST['zanr'])) {
 
   <div class="modal fade" id="my1" role="dialog">
     <div class="modal-dialog">
-      <!-- zakazi modal -->
-      <!--Sadrzaj modala-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -145,8 +156,6 @@ if (isset($_POST['zanr'])) {
         <div class="modal-body">
           <div class="container prijava-form">
             <form action="#" method="post" id="izmeniForma">
-
-
               <h3 style="color: black; text-align: center">Izmeni podatke o knjizi</h3>
               <div class="row">
                 <div class="col-md-11 ">
