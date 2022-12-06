@@ -121,7 +121,7 @@ include 'model/zanr.php';
                     <p>
                         Fakultet organizacionih nauka <br/>
                         Jove Ilica 154,<br />
-                        Beograd, Srbija
+                        Vozdovac, Srbija
                     </p>
                 </div>
 
