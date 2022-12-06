@@ -30,6 +30,7 @@ if (isset($_POST['zanr'])) {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+        <a class="navbar-brand" href="index.php">Biblioteka Fakulteta organizacionih nauka</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -96,8 +97,8 @@ if (isset($_POST['zanr'])) {
     <?php
     $niz = [];
     $rez = $conn->query("select * from knjiga k join zanr z on k.Zanr=z.ZanrId");
-    while ($red = $rez->fetch_assoc()) {
-      $Zanr = new Zanr($red['zanr'], $red['nazivZanra']);
+    while ($red = $rez->fetch_array()) {
+      $Zanr = new Zanr($red["zanrID"], $red['nazivZanra']);
       $knjiga = new Knjiga($red['IdKnjige'], $red['NazivKnjige'], $red['Autor'], $Zanr);
       array_push($niz, $knjiga);
     }
