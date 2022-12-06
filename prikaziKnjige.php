@@ -210,7 +210,7 @@ if (isset($_POST['zanr'])) {
           <p>
           Fakultet organizacionih nauka <br/>
           Jove Ilica 154,<br />
-          Vozdovac, Srbija
+          Beograd, Srbija
           </p>
         </div>
 
