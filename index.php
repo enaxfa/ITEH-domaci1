@@ -29,13 +29,13 @@ include 'model/zanr.php';
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Tvoja bibioteka</a>
+                <a class="navbar-brand" href="index.php">Biblioteka Fakulteta organizacionih nauka</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a id="btn-Pocetna" href="index.php" type="button" class="btn btn-success btn-block">Početna</a></li>
                     <li><a id="btn-Dodaj" type="button" class="btn btn-success btn-block"  data-toggle="modal" data-target="#my">Dodaj novu knjigu</a></li>
-                    <li><a id="btn-Upravljaj" href="prikaziKnjige.php" type="button" class="btn btn-success btn-block">Upravljaj knjigama</a></li>
+                    <li><a id="btn-Prikazi" href="prikaziKnjige.php" type="button" class="btn btn-success btn-block">Prikazi knjige</a></li>
                     
                 </ul>
             </div>
@@ -107,23 +107,6 @@ include 'model/zanr.php';
 
     </div>
 
-    <div class="container pt">
-    <div id="searchDiv">
-            <input type="text" name="search" id="searchBar"
-            oninput="pretraga0()" placeholder="pretrazi knjigu" class="form-control">
-             </div>
-        <label for="pretraga">Pretraži knjige za odabrani žanr</label>
-        <select id="pretraga" onchange="pretraga()" class="form-control">
-            <?php
-            $rez = $conn->query("SELECT * from zanr");
-            while ($red = $rez->fetch_assoc()) {
-            ?>
-                <option value="<?php echo $red['ZanrId'] ?>"> <?php echo $red['NazivZanra'] ?></option>
-            <?php   }
-            ?>
-        </select>
-        <div id="podaciPretraga"></div>
-    </div>
 
     <div id="footer">
         <div class="container">
@@ -131,9 +114,9 @@ include 'model/zanr.php';
                 <div class="col-lg-4">
                     <h4>Adresa</h4>
                     <p>
-                        Milana Rakica 77,<br />
-                        0655417876, <br />
-                        Beograd, Srbija.
+                        Fakultet organizacionih nauka,<br />
+                        Jove Ilica 154, <br />
+                        Beograd, Srbija
                     </p>
                 </div>
 
