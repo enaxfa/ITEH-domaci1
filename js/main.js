@@ -10,7 +10,7 @@ $('#dodajForm').submit(function () {
   $input.prop('disabled', true);
 
   req = $.ajax({
-    url: 'DodajKnjigu.php',
+    url: 'dodajKnjigu.php',
     type: 'post',
     data: serijalizacija
   });
@@ -19,12 +19,11 @@ $('#dodajForm').submit(function () {
     if (res == "Ok") {
       alert("Knjiga je uspesno dodata");
       location.reload(true);
-    } else console.log("Dodata je knjiga " + res);
-    console.log(res);
+    } else console.log("Knjiga nije dodata " + res);
   });
 
   req.fail(function (jqXHR, textStatus, errorThrown) {
-    console.error('Sledeca greska se desila> ' + textStatus, errorThrown)
+    console.error('Sledeca greska se desila: ' + textStatus, errorThrown)
   });
 });
 

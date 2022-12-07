@@ -1,4 +1,4 @@
- <?php
+<?php
 include 'konekcija.php';
 include 'model/knjiga.php';
 include 'model/zanr.php';
@@ -30,13 +30,12 @@ if (isset($_POST['zanr'])) {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">Biblioteka Fakulteta organizacionih nauka</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><a id="btn-Pocetna" href="index.php" type="button" class="btn btn-success btn-block">Početna</a></li>
           <li><a id="btn-Dodaj" type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#my">Dodaj novu knjigu</a></li>
-          <li><a id="btn-prikazi" href="prikaziKnjige.php" type="button" class="btn btn-success btn-block">Prikazi knjige</a></li>
+          <li><a id="btn-Upravljaj" href="prikaziKnjige.php" type="button" class="btn btn-success btn-block">Upravljaj knjigama</a></li>
         </ul>
       </div>
     </div>
@@ -69,7 +68,7 @@ if (isset($_POST['zanr'])) {
                                             $rez = $conn->query("SELECT * from zanr");
                                             while ($red = $rez->fetch_assoc()) {
                                             ?>
-                                               <option value="<?php echo $red["zanrId"] ?>"> <?php echo $red["nazivZanra"] ?></option>
+                                                <option name="value" value="<?php echo $red['ZanrId'] ?>"> <?php echo $red['NazivZanra'] ?></option>
                                             <?php  }
                                             ?>
                                         </select>
@@ -93,25 +92,12 @@ if (isset($_POST['zanr'])) {
         </div>
 
     </div>
-<div class = "pretraga-zanra">
-    <label for="pretraga">Pretraži knjige za odabrani žanr</label>
-        <select id="pretraga" onchange="pretraga()" class="form-control">
-        <?php
-            $rez = $conn->query("SELECT * from zanr");
-            while ($red = $rez->fetch_assoc()) {
-            ?>
-                <option value="<?php echo $red['ZanrId'] ?>"> <?php echo $red['nazivZanra'] ?></option>
-            <?php   }
-            ?>
-        </select>
-      </label>
-</div>
   <div class="container pt">
     <?php
     $niz = [];
     $rez = $conn->query("select * from knjiga k join zanr z on k.Zanr=z.ZanrId");
-    while ($red = $rez->fetch_array()) {
-      $Zanr = new Zanr($red["zanrID"], $red['nazivZanra']);
+    while ($red = $rez->fetch_assoc()) {
+      $Zanr = new Zanr($red['ZanrId'], $red['NazivZanra']);
       $knjiga = new Knjiga($red['IdKnjige'], $red['NazivKnjige'], $red['Autor'], $Zanr);
       array_push($niz, $knjiga);
     }
@@ -149,6 +135,8 @@ if (isset($_POST['zanr'])) {
 
   <div class="modal fade" id="my1" role="dialog">
     <div class="modal-dialog">
+      <!-- zakazi modal -->
+      <!--Sadrzaj modala-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -156,6 +144,8 @@ if (isset($_POST['zanr'])) {
         <div class="modal-body">
           <div class="container prijava-form">
             <form action="#" method="post" id="izmeniForma">
+
+
               <h3 style="color: black; text-align: center">Izmeni podatke o knjizi</h3>
               <div class="row">
                 <div class="col-md-11 ">
@@ -166,7 +156,7 @@ if (isset($_POST['zanr'])) {
                   </div>
 
                   <div class="form-group" style="display: none;">
-                    <label for="">IdZanra</label>
+                    <label for="">IdZanraaaa</label>
                     <input id="idZanra"  type="text" style="border: 1px solid black" name="idZanra" class="form-control" />
                   </div>
 
@@ -187,7 +177,7 @@ if (isset($_POST['zanr'])) {
                       $rez = $conn->query("SELECT * from zanr");
                       while ($red = $rez->fetch_assoc()) {
                       ?>
-                        <option value="<?php echo $red["zanrId"] ?>"> <?php echo $red["nazivZanra"] ?></option>
+                        <option value="<?php echo $red['ZanrId'] ?>"> <?php echo $red['NazivZanra'] ?></option>
                       <?php  }
                       ?>
                     </select>
@@ -218,9 +208,9 @@ if (isset($_POST['zanr'])) {
         <div class="col-lg-4">
           <h4>Adresa</h4>
           <p>
-          Fakultet organizacionih nauka <br/>
-          Jove Ilica 154,<br />
-          Beograd, Srbija
+            Milana Rakica 77,<br />
+            0655417876, <br />
+            Beograd, Srbija.
           </p>
         </div>
 

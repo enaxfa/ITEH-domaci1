@@ -4,6 +4,6 @@
   ini_set("log_errors", true);
 
 
-  $conn = new MySqli('localhost', 'root','','knjige');
+  $conn = new MySqli('localhost', 'root','','knjigedb');
   $conn->set_charset("utf8");
  ?>
