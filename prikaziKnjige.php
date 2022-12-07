@@ -6,7 +6,7 @@ include 'model/zanr.php';
 
 <!DOCTYPE html>
 <html lang="en">
-<?php
+<?php          //ne znam za sta je ovo 
 if (isset($_POST['zanr'])) {
   $icko = $_POST['zanr'];
 }

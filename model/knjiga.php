@@ -17,4 +17,9 @@ class Knjiga{
     public function insert($conn){
       return $conn->query("INSERT INTO knjiga(NazivKnjige,Autor,Zanr) VALUES ('$this->NazivKnjige','$this->Autor',$this->Zanr)");
   }
+
+  public function delete($conn,$id){
+    return $conn->query("DELETE FROM knjiga where IdKnjige=$id");
+  }
+
 }
