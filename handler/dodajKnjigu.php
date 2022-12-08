@@ -1,6 +1,6 @@
 <?php
- include 'konekcija.php';
- include 'model/knjiga.php';
+ require '../konekcija.php';
+ require '../model/knjiga.php';
 
 
  if(isset($_POST['naziv']) && isset($_POST['autor']) && isset($_POST['zanr'])){

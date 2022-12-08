@@ -80,18 +80,12 @@ include 'model/zanr.php';
                                         <select id="zanr" name="zanr" class="form-control">
                                             <?php
                                             $rez = $conn->query("SELECT * from zanr");
-                                            while ($red = $rez->fetch_assoc()) {
+                                            while ($red = $rez->fetch_array()) {
                                             ?>
                                                 <option name="value" value="<?php echo $red['ZanrId'] ?>"> <?php echo $red['NazivZanra'] ?></option>
                                             <?php  }
                                             ?>
                                         </select>
-                                    </div>
-                                    <div class="col-md-12" style="display: none;">
-                                        <div class="form-group">
-                                            <label for="">Datum neki</label>
-                                            <input type="date" style="border: 1px solid black" name="datum" class="form-control" />
-                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <button id="btnDodaj" type="submit" class="btn btn-success btn-block" tyle="background-color: orange; border: 1px solid black;">Dodaj</button>
@@ -137,35 +131,7 @@ include 'model/zanr.php';
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        function pretraga0(){
-            $.ajax({
-                url: "PretragaKnjigaPoNazivu.php",
-                data: {
-                    NazivKnjige: $("#searchBar").val()
-                },
-                success: function(html) {
-                    $("#podaciPretraga").html(html);
-                }
-            })
-        }
-    </script>
-    <script>
-        function pretraga() {
-            $.ajax({
-                url: "PretragaKnjiga.php",
-                data: {
-                    ZanrId: $("#pretraga").val()
-                },
-                success: function(html) {
-                    $("#podaciPretraga").html(html);
-                }
-            })
-        }
-    </script>
-    <script>
-        pretraga();
-    </script>
+    
 </body>
 
 </html>

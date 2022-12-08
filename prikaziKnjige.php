@@ -81,18 +81,12 @@ if (isset($_POST['zanr'])) {
                                         <select id="zanr" name="zanr" class="form-control">
                                             <?php
                                             $rez = $conn->query("SELECT * from zanr");
-                                            while ($red = $rez->fetch_assoc()) {
+                                            while ($red = $rez->fetch_array()) {
                                             ?>
                                                 <option name="value" value="<?php echo $red['ZanrId'] ?>"> <?php echo $red['NazivZanra'] ?></option>
                                             <?php  }
                                             ?>
                                         </select>
-                                    </div>
-                                    <div class="col-md-12" style="display: none;">
-                                        <div class="form-group">
-                                            <label for="">Datum neki</label>
-                                            <input type="date" style="border: 1px solid black" name="datum" class="form-control" />
-                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <button id="btnDodaj" type="submit" class="btn btn-success btn-block" tyle="background-color: orange; border: 1px solid black;">Dodaj</button>
@@ -111,7 +105,7 @@ if (isset($_POST['zanr'])) {
     <?php
     $niz = [];
     $rez = $conn->query("select * from knjiga k join zanr z on k.Zanr=z.ZanrId");
-    while ($red = $rez->fetch_assoc()) {
+    while ($red = $rez->fetch_array()) {
       $Zanr = new Zanr($red['ZanrId'], $red['NazivZanra']);
       $knjiga = new Knjiga($red['IdKnjige'], $red['NazivKnjige'], $red['Autor'], $Zanr);
       array_push($niz, $knjiga);
@@ -188,18 +182,12 @@ if (isset($_POST['zanr'])) {
                     <select title="zanrr" id="zanr" name="zanr" class="form-control">
                       <?php
                       $rez = $conn->query("SELECT * from zanr");
-                      while ($red = $rez->fetch_assoc()) {
+                      while ($red = $rez->fetch_array()) {
                       ?>
                         <option value="<?php echo $red['ZanrId'] ?>"> <?php echo $red['NazivZanra'] ?></option>
                       <?php  }
                       ?>
                     </select>
-                  </div>
-                  <div class="col-md-12" style="display: none;">
-                    <div class="form-group">
-                      <label for="" >Datum neki</label>
-                      <input type="date" style="border: 1px solid black" name="datum" class="form-control" />
-                    </div>
                   </div>
                   <div class="form-group">
                     <button id="btnIzmeni" type="submit" class="btn btn-success btn-block" tyle="background-color: orange; border: 1px solid black;">Izmeni</button>
@@ -215,35 +203,37 @@ if (isset($_POST['zanr'])) {
 
   </div>
 
+  
   <div id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <h4>Adresa</h4>
-          <p>
-          Fakultet organizacionih nauka,<br />
-          Jove Ilica 154, <br />
-          Beograd, Srbija
-          </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h4>Adresa</h4>
+                    <p>
+                        Fakultet organizacionih nauka,<br />
+                        Jove Ilica 154, <br />
+                        Beograd, Srbija
+                    </p>
+                </div>
+
+                <div class="col-lg-4">
+                    <h4>Društvene mreže</h4>
+                    <p>
+                        <a href="https://www.facebook.com/fon.bg.ac.rs">Facebook</a><br />
+                        <a href="https://twitter.com/fonbg">Twitter</a><br />
+                        <a href="http://plus.google.com/106390371419524147048/posts">Google+</a>
+                    </p>
+                </div>
+
+            </div>
+
         </div>
-
-        <div class="col-lg-4">
-          <h4>Društvene mreže</h4>
-          <p>
-            <a href="https://www.facebook.com/fon.bg.ac.rs">Facebook</a><br />
-            <a href="https://twitter.com/fonbg">Twitter</a><br />
-            <a href="http://plus.google.com/106390371419524147048/posts">Google+</a>
-          </p>
-        </div>
-
-      </div>
-
     </div>
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-
+    
 </body>
 
-</html> 
+</html>

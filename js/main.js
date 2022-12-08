@@ -10,7 +10,7 @@ $('#dodajForm').submit(function () {
   $input.prop('disabled', true);
 
   req = $.ajax({
-    url: 'dodajKnjigu.php',
+    url: 'handler/dodajKnjigu.php',
     type: 'post',
     data: serijalizacija
   });
@@ -31,11 +31,10 @@ $('#dodajForm').submit(function () {
 
 $('.btn-danger').click(function () {
   console.log("Brisanje");
-  const trenutni = $(this).attr('data-id1');
-  const trBrisi = $('button[name=btnObrisi]');
-  console.log(trenutni);
+  const trenutni = $(this).attr('data-id1');  //jQuery fja koja vraca vrednost prosledjenog atributa
+  console.log('ID selektovane knjige za brisanje je: ' + trenutni);
   req = $.ajax({
-    url: 'obrisiKnjigu.php',
+    url: 'handler/obrisiKnjigu.php',
     type: 'post',
     data: { 'id': trenutni }
   });
