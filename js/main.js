@@ -96,27 +96,28 @@ $("#zanr").change(function(){
 
 //Edit
 $('.btn-info').click(function () {
-  
+
   const trenutni = $(this).attr('data-id2');
   console.log(trenutni);
   var naziv = $(this).closest('tr').children('td[data-target=naziv]').text();
   console.log(naziv);
   var autor = $(this).closest('tr').children('td[data-target=autor]').text();
   var zanr = $(this).closest('tr').children('td[data-target=zanr]').text();
+  var idZanra = $(this).closest('tr').children('td[data-target=idZanra]').text();
   console.log(zanr);
+  console.log(idZanra);
   
 
   $('#idKnjige').val(trenutni);
   $('#naziv').val(naziv);
   $('#autor').val(autor);
-  $('#zanr').val(zanr);
-  
+  document.getElementById('zanrOznaceni').value = idZanra;
 });
 
 
 
 
-//Update
+//Updates
 $('#izmeniForma').submit(function(){
 
   event.preventDefault();

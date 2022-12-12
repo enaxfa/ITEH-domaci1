@@ -58,7 +58,6 @@ if (isset($_POST['zanr'])) {
 
   <div class="modal fade" id="my" role="dialog">
         <div class="modal-dialog">
-            
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -163,11 +162,9 @@ if (isset($_POST['zanr'])) {
                   </div>
 
                   <div class="form-group" style="display: none;">
-                    <label for="">IdZanraaaa</label>
+                    <label for="">IdZanra</label>
                     <input id="idZanra"  type="text" style="border: 1px solid black" name="idZanra" class="form-control" />
                   </div>
-
-
                   <div class="form-group">
                     <label for="">Naziv knjige</label>
                     <input id="naziv" type="text" style="border: 1px solid black" name="naziv" class="form-control" />
@@ -178,8 +175,7 @@ if (isset($_POST['zanr'])) {
                   </div>
                   <div class="form-group">
                     <label for="">Zanr</label>
-
-                    <select title="zanrr" id="zanr" name="zanr" class="form-control">
+                    <select title="zanr" id="zanrOznaceni" name="zanr" class="form-control">
                       <?php
                       $rez = $conn->query("SELECT * from zanr");
                       while ($red = $rez->fetch_array()) {
