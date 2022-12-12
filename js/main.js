@@ -154,7 +154,7 @@ $('#izmeniForma').submit(function(){
   $input.prop('disabled', true);
 
   req = $.ajax({
-    url: 'AzurirajKnjigu.php',
+    url: 'handler/azurirajKnjigu.php',
     type: 'post',
     data: serijalizacija
   });
@@ -164,11 +164,10 @@ $('#izmeniForma').submit(function(){
       alert("Knjiga je uspesno azurirana");
       location.reload(true);
     } else console.log("Knjiga nije azurirana " + res);
-    console.log(res);
   });
 
   req.fail(function (jqXHR, textStatus, errorThrown) {
-    console.error('Sledeca greska se desila> ' + textStatus, errorThrown)
+    console.error('Sledeca greska se desila: ' + textStatus, errorThrown)
   });
 
 

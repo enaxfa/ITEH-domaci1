@@ -22,4 +22,12 @@ class Knjiga{
     return $conn->query("DELETE FROM knjiga where IdKnjige=$id");
   }
 
+  public function update($conn){
+    if($conn->query("UPDATE Knjiga SET NazivKnjige='$this->NazivKnjige',Autor='$this->Autor',Zanr=$this->Zanr where IdKnjige=$this->IdKnjige")){
+      return true;
+    }else{
+      return false;
+    }
+}
+
 }
