@@ -50,7 +50,6 @@ $('.btn-danger').click(function () {
       alert("Knjiga nije izbrisana ");
 
     }
-    console.log(res);
   });
 
 });
