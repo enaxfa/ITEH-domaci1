@@ -96,46 +96,22 @@ $("#zanr").change(function(){
 
 //Edit
 $('.btn-info').click(function () {
+  
   const trenutni = $(this).attr('data-id2');
-
-
   console.log(trenutni);
   var naziv = $(this).closest('tr').children('td[data-target=naziv]').text();
   console.log(naziv);
   var autor = $(this).closest('tr').children('td[data-target=autor]').text();
   var zanr = $(this).closest('tr').children('td[data-target=zanr]').text();
-  var idZanra =  $('#zanr').val();
   console.log(zanr);
-
+  
 
   $('#idKnjige').val(trenutni);
   $('#naziv').val(naziv);
   $('#autor').val(autor);
-  $('#test').val(zanr);
-  $('#idZanra').val(idZanra);
-
-
-  switch (zanr) {
-    case "Autobiografija":
-      $('#zanr').val("1");
-      break;
-    case "Avanturistički":
-      $('#zanr').val("2");
-      break;
-    case "Bojanka":
-      $('#zanr').val("3");
-      break;
-    case "Psihološki":
-      $('#zanr').val("4");
-      break;
-    default:$('#zanr').val("1");
-    
-  }
-
-  $('#my').modal('toggle');
+  $('#zanr').val(zanr);
+  
 });
-
-
 
 
 

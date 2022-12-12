@@ -23,11 +23,13 @@ class Knjiga{
   }
 
   public function update($conn){
-    if($conn->query("UPDATE Knjiga SET NazivKnjige='$this->NazivKnjige',Autor='$this->Autor',Zanr=$this->Zanr where IdKnjige=$this->IdKnjige")){
-      return true;
-    }else{
-      return false;
-    }
+    return $conn->query("UPDATE Knjiga SET NazivKnjige='$this->NazivKnjige',Autor='$this->Autor',Zanr=$this->Zanr where IdKnjige=$this->IdKnjige");
+}
+
+public static function getById($id, $conn){
+  return $conn->query("SELECT * FROM knjiga WHERE IdKnjige = $id");
 }
 
 }
+
+?>

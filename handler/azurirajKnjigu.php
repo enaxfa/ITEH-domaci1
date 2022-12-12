@@ -8,7 +8,7 @@
   $knjigaId=$_POST['idKnjige'];
   $naziv=$_POST['naziv'];
   $autor=$_POST['autor'];
-  $zanr=$_POST['idZanra'];
+  $zanr=$_POST['zanr'];
 
   $knjiga=new Knjiga($knjigaId,$naziv,$autor,$zanr);
   $rezultat=$knjiga->update($conn);
