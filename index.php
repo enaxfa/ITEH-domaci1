@@ -101,6 +101,22 @@ include 'model/zanr.php';
 
     </div>
 
+    <div class="container pt">
+    <div id="searchDiv">
+        <label for="pretraga">Pretraži knjige za odabrani žanr</label>
+        <select id="pretraga" onchange="pretraga()" class="form-control">
+            <?php
+            $rez = $conn->query("SELECT * from zanr");
+            while ($red = $rez->fetch_assoc()) {
+            ?>
+                <option value="<?php echo $red['ZanrId'] ?>"> <?php echo $red['NazivZanra'] ?></option>
+            <?php   }
+            ?>
+        </select>
+    </div>
+    <div id="podaciPretraga"></div>
+    </div>
+
 
     <div id="footer">
         <div class="container">
@@ -131,6 +147,19 @@ include 'model/zanr.php';
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        function pretraga() {
+            $.ajax({
+                url: "handler/pretragaKnjiga.php",
+                data: {
+                    ZanrId: $("#pretraga").val()
+                },
+                success: function(html) {
+                    $("#podaciPretraga").html(html);
+                }
+            })
+        }
+    </script>
     
 </body>
 
